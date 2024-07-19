@@ -93,9 +93,4 @@ CONFIG_DIR=/data/adb/tricky_store
 if [ ! -d "$CONFIG_DIR" ]; then
   ui_print "- Creating configuration directory"
   mkdir -p "$CONFIG_DIR"
-  if [ ! -f "$CONFIG_DIR/target.txt" ]; then
-    ui_print "- Adding default scope"
-    extract "$ZIPFILE" 'target.txt' "$TMPDIR"
-    mv "$TMPDIR/target.txt" "$CONFIG_DIR/target.txt"
-  fi
 fi
